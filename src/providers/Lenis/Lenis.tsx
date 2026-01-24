@@ -1,6 +1,6 @@
 "use client";
 import ReactLenis from "lenis/react";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import {
   desktopScrollSettings,
   mobileScrollSettings,
@@ -8,25 +8,19 @@ import {
 import type { ChildrenProps } from "@/src/types/Props";
 
 export const Lenis = ({ children }: ChildrenProps): React.ReactNode => {
-  const [isMobile, setIsMobile] = useState(() =>
-    typeof window !== "undefined"
-      ? window.matchMedia("(max-width: 1023px)").matches
-      : false,
-  );
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  useEffect(() => {
-    if (typeof window === "undefined") {
-      return;
-    }
-
+  useLayoutEffect(() => {
     const mediaQueryList = window.matchMedia("(max-width: 1023px)");
     const handleMediaChange = (event: MediaQueryListEvent) => {
       setIsMobile(event.matches);
     };
+
+    setIsMobile(mediaQueryList.matches);
 
     mediaQueryList.addEventListener("change", handleMediaChange);
 
