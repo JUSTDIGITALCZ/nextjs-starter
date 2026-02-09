@@ -1,17 +1,17 @@
 import type React from "react";
 
 export type ClassNameProps = {
-  className?: string;
+	className?: string;
 };
 
 export type HrefProps = {
-  href?: string;
+	href?: string;
 };
 
 export type ChildrenProps = {
-  children?: React.ReactNode;
+	children?: React.ReactNode;
 };
 
 export type SlugProps = {
-  slug?: string;
+	slug?: string;
 };
