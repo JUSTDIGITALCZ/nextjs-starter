@@ -1,6 +1,6 @@
 // src/app/[locale]/page.tsx
 import { setRequestLocale, getTranslations } from "next-intl/server";
-import { routing, type Locale } from "@/src/i18n/routing";
+import { routing } from "@/src/i18n/routing";
 
 export async function generateStaticParams() {
 	return routing.locales.map((locale) => ({ locale }));
@@ -9,7 +9,7 @@ export async function generateStaticParams() {
 export default async function Page({
 	params,
 }: {
-	params: Promise<{ locale: Locale }>;
+	params: Promise<{ locale: string }>;
 }) {
 	const { locale } = await params;
 	setRequestLocale(locale);

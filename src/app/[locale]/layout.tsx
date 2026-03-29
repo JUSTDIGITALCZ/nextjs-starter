@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist } from "next/font/google";
 import "../globals.css";
 import { Lenis } from "@/src/providers/Lenis/Lenis";
-import { routing, type Locale } from "@/src/i18n/routing";
+import { routing } from "@/src/i18n/routing";
 import { setRequestLocale, getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 
@@ -32,7 +32,7 @@ export default async function RootLayout({
 	params,
 }: Readonly<{
 	children: React.ReactNode;
-	params: Promise<{ locale: Locale }>;
+	params: Promise<{ locale: string }>;
 }>) {
 	const { locale } = await params;
 	setRequestLocale(locale);
