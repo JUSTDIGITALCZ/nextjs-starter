@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { routing } from "@/src/i18n/routing";
 
 const getBaseUrl = () => {
 	if (process.env.NEXT_PUBLIC_SITE_URL) {
@@ -16,18 +17,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 	const baseUrl = getBaseUrl();
 	const lastModified = new Date("2026-01-24");
 
-	return [
-		{
-			url: `${baseUrl}/`,
-			lastModified,
-			changeFrequency: "yearly",
-			priority: 1,
-		},
-		{
-			url: `${baseUrl}/en`,
-			lastModified,
-			changeFrequency: "yearly",
-			priority: 1,
-		},
-	];
+	return routing.locales.map((locale) => ({
+		url: locale === routing.defaultLocale ? `${baseUrl}/` : `${baseUrl}/${locale}`,
+		lastModified,
+		changeFrequency: "yearly" as const,
+		priority: 1,
+	}));
 }

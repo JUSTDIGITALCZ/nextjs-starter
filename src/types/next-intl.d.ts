@@ -6,3 +6,5 @@ type Messages = typeof cs;
 declare global {
 	interface IntlMessages extends Messages {}
 }
+
+export {};
