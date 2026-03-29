@@ -1,5 +1,5 @@
 // src/types/next-intl.d.ts
-import cs from "../../messages/cs.json";
+import cs from "@/messages/cs.json";
 
 type Messages = typeof cs;
 
