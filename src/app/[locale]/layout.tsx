@@ -2,10 +2,10 @@
 import type { Metadata, Viewport } from "next";
 import { Geist } from "next/font/google";
 import "../globals.css";
-import { Lenis } from "@/src/providers/Lenis/Lenis";
-import { routing } from "@/src/i18n/routing";
-import { setRequestLocale, getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
+import { getMessages, setRequestLocale } from "next-intl/server";
+import { routing } from "@/src/i18n/routing";
+import { Lenis } from "@/src/providers/Lenis/Lenis";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
