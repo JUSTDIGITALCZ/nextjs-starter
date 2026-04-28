@@ -1,12 +1,13 @@
 # my-app
 
-Next.js starter with TypeScript, Tailwind CSS, GSAP, and Lenis.
+Next.js starter with TypeScript, Next-intl, Tailwind CSS, GSAP, and Lenis.
 
 ## Stack
 
 - **Next.js** 16
 - **React** 19
 - **TypeScript**
+- **Next-intl**
 - **Tailwind CSS** 4
 - **GSAP** + @gsap/react
 - **Lenis** (smooth scroll)

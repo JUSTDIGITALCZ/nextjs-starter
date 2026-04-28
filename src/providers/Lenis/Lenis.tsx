@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import {
   desktopScrollSettings,
   mobileScrollSettings,
-} from "@/src/providers/lenis/LenisSettings";
+} from "@/src/providers/Lenis/LenisSettings";
 import "lenis/dist/lenis.css";
-import type { ChildrenProps } from "@/src/types/props";
+import type { ChildrenProps } from "@/src/types/Props";
 
 export const Lenis = ({ children }: ChildrenProps) => {
   const [isMobile, setIsMobile] = useState(false);
