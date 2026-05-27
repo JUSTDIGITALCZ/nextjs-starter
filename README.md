@@ -34,3 +34,4 @@ bun install
 - `src/providers` — React providers (e.g. Lenis)
 - `src/utils` — Shared utilities
 - `src/types` — TypeScript types
+# tarpan
